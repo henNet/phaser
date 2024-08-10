@@ -1,11 +1,12 @@
 /* Variável de configuração do Phaser */
 var config = {
-  width: 800,
-  height: 400,
+  width: 1000,
+  height: 500,
   scale: {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   scene: {
+    key: "Game",
     preload: preload,
     create: create,
     update: update,
@@ -28,5 +29,5 @@ function create() {
   createAssets(this);
 }
 function update() {
-  updateGame();
+  updateGame(this);
 }

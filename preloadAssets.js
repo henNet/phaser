@@ -8,4 +8,16 @@ function preloadAssets(scene) {
     frameWidth: 32,
     frameHeight: 48,
   });
+
+  /* Coletável */
+  scene.load.image("star", "./assets/star.png");
+
+  /* Inimigo */
+  scene.load.image("bomb", "./assets/bomb.png");
+
+  /* Effects */
+  scene.load.spritesheet("dash", "./assets/dash.png", {
+    frameWidth: 73,
+    frameHeight: 40,
+  });
 }
