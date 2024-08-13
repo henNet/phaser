@@ -32,7 +32,7 @@ function createAssets(scene) {
 
   /* Animações do Player */
   createPlayerAnimations(scene);
-  player.anims.play("parado", true);
+  player.anims.play("dash-player-right", true);
   // dashe.anims.play("dash", true);
 
   /* Entradas do teclado */
@@ -66,7 +66,7 @@ function gameOver(player, bombs) {
 function createPlayerAnimations(scene) {
   var andarLeft = {
     key: "left",
-    frames: scene.anims.generateFrameNumbers("player", { start: 0, end: 3 }),
+    frames: scene.anims.generateFrameNumbers("player", { start: 6, end: 9 }),
     frameRate: 10,
     repeat: -1,
   };
@@ -74,19 +74,43 @@ function createPlayerAnimations(scene) {
 
   var andarRight = {
     key: "right",
-    frames: scene.anims.generateFrameNumbers("player", { start: 5, end: 8 }),
+    frames: scene.anims.generateFrameNumbers("player", { start: 2, end: 5 }),
     frameRate: 10,
     repeat: -1,
   };
   scene.anims.create(andarRight);
 
-  var parado = {
-    key: "parado",
-    frames: [{ key: "player", frame: 4 }],
+  var paradoLeft = {
+    key: "paradoLeft",
+    frames: [{ key: "player", frame: 0 }],
     frameRate: 10,
     repeat: -1,
   };
-  scene.anims.create(parado);
+  scene.anims.create(paradoLeft);
+
+  var paradoRight = {
+    key: "paradoRight",
+    frames: [{ key: "player", frame: 1 }],
+    frameRate: 10,
+    repeat: -1,
+  };
+  scene.anims.create(paradoRight);
+
+  var playerDashR = {
+    key: "dash-player-right",
+    frames: scene.anims.generateFrameNumbers("player", { start: 10, end: 15 }),
+    frameRate: 35,
+    repeat: 0,
+  };
+  scene.anims.create(playerDashR);
+
+  var playerDashL = {
+    key: "dash-player-left",
+    frames: scene.anims.generateFrameNumbers("player", { start: 16, end: 21 }),
+    frameRate: 35,
+    repeat: 0,
+  };
+  scene.anims.create(playerDashL);
 
   var dash = {
     key: "dash",
